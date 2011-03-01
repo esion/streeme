@@ -88,9 +88,9 @@ streeme = {
 	/**
 	* Store the user's last alpha states
 	*/
-	artist_alpha : 'a',
-	album_alpha : 'a',
-	song_alpha : 'a',
+	artist_alpha : 'all',
+	album_alpha : 'all',
+	song_alpha : 'all',
 	genre_alpha : 'all',
 	playlist_alpha: 'all',
 	hideSongAlpha : false, //temporarily hide song alpha bar
@@ -933,9 +933,19 @@ streeme = {
 					result = $.parseJSON( msg );
 					var html = '';
 					var rows = 0;
+					var prev_firstletter = null;
 					//build and place html
 					for ( var i in result )
 					{
+						var firstletter = result[i]['name'].substring(0,1).toUpperCase();
+						
+						if(firstletter != prev_firstletter)
+						{
+							console.log(firstletter);
+							prev_firstletter = firstletter;
+							html += '<li class="letterbarcontainer" id="' + listname + '_' + firstletter + '">' + firstletter + '</li>';
+						}
+						
 						html += '<li onclick="streeme.choose( \'' + listname + '\', \'' + result[i]['id'] + '\' )">' + result[i]['name'] + '</li>';
 						rows++;
 					}

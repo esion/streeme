@@ -17,7 +17,7 @@
    echo ' <tr>';
    foreach ( $list as $alpha => $label )
    {
-      echo '<td onclick="streeme.changeAlpha( \'' . $element . '\', \'' . strtolower( $label ) . '\'); return false;">' . strtoupper( $label ) . '</td>';
+      echo '<td><a href="#' . $element . '_' . $label . '">' . strtoupper( $label ) . '</a></td>';
    }
    echo ' </tr>';
    echo '</table>';

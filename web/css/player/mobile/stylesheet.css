@@ -11,6 +11,10 @@ body{
 	color: #484848;
 	background-color: #000;
 }
+a, a:active, a:hover, a:visited{
+	color: #484848;
+	 text-decoration: none;
+}
 .clearfix:after, ui-helper-clearfix:after{
 	content: ".";
 	display: block;
@@ -199,6 +203,11 @@ ul, ol{
 		li:hover, td.song_tbl_title:hover{
 			background-color: #DDD;
 	}
+	li.letterbarcontainer{
+	  background-color: #DDD;
+    padding: 3pt 8pt;
+    font-size: 9pt;
+  }
 div.letterbarcontainer{
 	background-color: #DDD;
 	border-top: 1pt solid #F4F4F4;
@@ -219,6 +228,12 @@ table.letterbar{
 	}
 		table.letterbar td:hover{
 			background-color: #bddfff;
+		}
+		table.letterbar td a{
+		  display: block;
+		}
+		table.letterbar td a:hover{
+		  
 		}
 .transport{
 	position: relative;
